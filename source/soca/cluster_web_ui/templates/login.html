@@ -14,36 +14,28 @@
             position: relative;
         }
 
+        .logo-container {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            top: 100px; /* 将 top 值从 20px 更改为 100px */
+            left: 20px;
+        }
+
         .logo-left {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            max-width: 150px; /* 修改这一行 */
+            max-width: 200px;
         }
 
-        .logo-left-text {
-            position: absolute;
-            top: 75px; /* 修改这一行 */
-            left: 20px;
-            color: #fff;
-            font-size: 9px;
-            width: 300px; /* 设置一个固定宽度 */
-            text-align: justify; /* 两端对齐文本 */
-            white-space: nowrap; /* 防止文本换行 */
-            overflow: hidden; /* 隐藏超出容器的文本 */
-        }
-
-        .logo-left-text::after {
-            content: "";
-            display: inline-block;
-            width: 100%; /* 强制文本占据整个容器宽度 */
+        .new-image {
+            max-width: 250px;
+            margin-left: 20px;
         }
 
         .logo-right {
             position: absolute;
             bottom: 20px;
             right: 20px;
-            max-width: 150px; /* 修改这一行 */
+            max-width: 150px;
         }
 
         .platform-name {
@@ -133,9 +125,11 @@
     </style>
 </head>
 <body>
-    <img class="logo-left" src="{{ url_for('static', filename='img/horizon.png') }}" alt="Logo">
-    <div class="logo-left-text">Global Leading Provider of<br>Artificial Intelligence Chips</div>
-    <img class="logo-right" src="{{ url_for('static', filename='img/aws_logo_screenshot-removebg.png.png') }}" alt="Logo">
+    <div class="logo-container">
+        <img class="logo-left" src="{{ url_for('static', filename='img/horizon.png') }}" alt="Logo">
+        <img class="new-image" src="{{ url_for('static', filename='img/tianzhun.png') }}" alt="logo">
+    </div>
+    <img class="logo-right" src="{{ url_for('static', filename='img/aws_logo_screenshot-removebg.png') }}" alt="Logo">
     <div class="platform-name">Autonomous Driving SiL & HiL Platform</div>
     <video id="bg-video" autoplay muted loop>
         <source src="{{ url_for('static', filename='video/background.mp4') }}" type="video/mp4">
